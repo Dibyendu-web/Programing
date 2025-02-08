@@ -67,3 +67,5 @@ using BenchmarkTools
 end
 
 a = Vector{Int}(undef, 1000)
+
+a[5] = 345
