@@ -69,3 +69,13 @@ end
 a = Vector{Int}(undef, 1000)
 
 a[5] = 345
+
+function f(x)
+    return x^4 + 5x^3 + 3x^2 + 2x + 1
+end
+
+@show f(2)
+
+@benchmark begin
+    f(2)
+end
