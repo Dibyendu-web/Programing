@@ -2,4 +2,4 @@ import eyes17.eyes
 
 p = eyes17.eyes.open()
 
-p.get_sensor("MPU6050", 0)
+p.set_call
