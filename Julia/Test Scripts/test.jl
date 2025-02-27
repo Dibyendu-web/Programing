@@ -79,3 +79,21 @@ end
 @benchmark begin
     f(2)
 end
+
+# Define a meshgrid function using list comprehensions
+function meshgrid(x::AbstractVector, y::AbstractVector)
+    X = [xi for yi in y, xi in x]
+    Y = [yi for yi in y, xi in x]
+    return X, Y
+end
+
+# Example usage:
+x = LinRange(0, 1, 5)  # e.g., 5 points from 0 to 1
+y = LinRange(0, 1, 3)  # e.g., 3 points from 0 to 1
+
+X, Y = meshgrid(x, y)
+
+println("X grid:")
+println(X)
+println("\nY grid:")
+println(Y)
