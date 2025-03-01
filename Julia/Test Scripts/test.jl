@@ -88,8 +88,8 @@ function meshgrid(x::AbstractVector, y::AbstractVector)
 end
 
 # Example usage:
-x = LinRange(0, 1, 5)  # e.g., 5 points from 0 to 1
-y = LinRange(0, 1, 3)  # e.g., 3 points from 0 to 1
+x = LinRange(0, 1, 100)  # e.g., 5 points from 0 to 1
+y = LinRange(0, 1, 100)  # e.g., 3 points from 0 to 1
 
 X, Y = meshgrid(x, y)
 
@@ -97,3 +97,27 @@ println("X grid:")
 println(X)
 println("\nY grid:")
 println(Y)
+
+f = X^2 + Y^2
+
+using Plots
+
+plot(X, Y, f, st = :surface)
+
+using SymPy, Unitful, Observables
+
+@syms x y 
+
+v = 5*x*u"m/s"
+
+e = 5u"c"
+
+v/e
+
+v = Observable(5*x*u"m/s")
+
+e = 2*v[]
+
+v[] = 10*y*u"m/s"
+
+e
