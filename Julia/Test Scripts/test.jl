@@ -120,4 +120,12 @@ e = 2*v[]
 
 v[] = 10*y*u"m/s"
 
-e
+using ForwardDiff
+x= [0, pi]
+f = x -> @. x[1]^2 + 2x[2]
+
+ForwardDiff.gradient(f, x)
+
+isa(f(x), Real)
+
+df = @. ForwardDiff.derivative(x -> sin(x), x)
