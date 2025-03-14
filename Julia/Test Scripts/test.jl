@@ -121,11 +121,28 @@ e = 2*v[]
 v[] = 10*y*u"m/s"
 
 using ForwardDiff
-x= [0, pi]
+
 f = x -> @. x[1]^2 + 2x[2]
 
-ForwardDiff.gradient(f, x)
+function f1(x, y)
+    return x^2 + 2y
+    
+end
+
+f1
+
+ForwardDiff.gradient(f1)
 
 isa(f(x), Real)
 
 df = @. ForwardDiff.derivative(x -> sin(x), x)
+
+using Plots
+
+quiver([0], [0], quiver=([1], [1]))
+
+include("modules.jl")
+using .NumpyJulia
+
+x = y = 0:0.1:1
+X, Y = meshgrid(x, y)
