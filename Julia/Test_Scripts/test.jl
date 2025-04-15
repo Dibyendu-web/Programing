@@ -24,3 +24,6 @@ x  = rand(10000, 10000);
 y  = rand(10000, 10000);
 @benchmark f1(x, y)
 @benchmark f2(x, y)
+
+x = [1 2 3; 4 5 6; 7 8 9]
+y = similar(x)
