@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../My Site"
+		},
+		{
+			"path": "../Users/dibye/.julia/dev/TestPackage"
+		}
+	],
+	"settings": {
+		"julia.environmentPath": "c:\\Programing"
+	}
+}
