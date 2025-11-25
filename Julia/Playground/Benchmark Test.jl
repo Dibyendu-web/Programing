@@ -1,4 +1,5 @@
 using BenchmarkTools
+
 function f1(x::Matrix{Float64}, y::Matrix{Float64})
     s = size(x)
     a = zeros(Float64, s)
@@ -20,8 +21,8 @@ function f2(x::Matrix{Float64}, y::Matrix{Float64})
     return a
 end
 
-x  = rand(10000, 10000);
-y  = rand(10000, 10000);
+x = rand(10000, 10000);
+y = rand(10000, 10000);
 @benchmark f1(x, y)
 @benchmark f2(x, y)
 

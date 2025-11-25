@@ -1,10 +1,12 @@
 using SymPy
 
-@syms x 
+@syms x
 
-function f(x)
-    return x^2
+function f(a)
+    return a^2
 end
 
-df = diff(f(x), x)
+df = SymPy.diff(f(x), x)
+
+println(df)
 
